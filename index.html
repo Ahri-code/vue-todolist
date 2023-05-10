@@ -12,7 +12,14 @@
     <div id="app">
         <div id="container">
             <ul>
-                <li v-for="task in todoList" :class="(task.done == true) ? 'done' : ''">{{task.text}}</li>
+                <li v-for="task in todoList">
+                    <div>
+                        <button class="x" @click="del">x</button>
+                        <span :class="(task.done == true) ? 'done' : ''" v-if="check == 'false'">
+                            {{task.text}}
+                        </span>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>

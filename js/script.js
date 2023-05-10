@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            check: false,
             todoList: [
                 {
                     text: "Lavorare",
@@ -24,6 +25,15 @@ createApp({
         }
     },
     methods: {
-        
+        del() {
+            if (check == false) {
+                check = true;
+                return check;
+            }
+            else {
+                check = false;
+                return check;
+            }
+        }
     }
 }).mount('#app')
